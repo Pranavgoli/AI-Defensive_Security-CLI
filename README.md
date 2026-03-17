@@ -1,6 +1,6 @@
 # AI Defensive Security CLI (DS-CLI)
 
-![PyPI](https://img.shields.io/badge/pypi-v1.0.0-orange) ![License](https://img.shields.io/badge/license-MIT-yellowgreen) ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue) ![Status: Beta](https://img.shields.io/badge/status-beta-yellow)
+![PyPI](https://img.shields.io/badge/pypi-v1.0.0-orange) ![License](https://img.shields.io/badge/license-Apache%202.0-yellowgreen) ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue) ![Status: Beta](https://img.shields.io/badge/status-beta-yellow)
 
 The DS-CLI is an open-source, AI-powered terminal application designed for defensive security teams. It provides real-time log ingestion, rule-based threat detection (like brute-force and authentication failures), and automated Root Cause Analysis (RCA) via locally hosted AI models.
 
