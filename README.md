@@ -150,3 +150,12 @@ Even if a log line is severely obfuscated or malformed (non-JSON, missing braces
 
 ## Contributing
 Pull requests are welcome! Ensure you handle edge cases carefully, as security logs can contain highly malformed, adversarial data.
+
+## Disclaimer
+Data Privacy & AI Limitations: This tool processes raw system and security logs which may contain sensitive information (PII, credentials, internal IP addresses).
+
+By defaulting to Local AI (via Ollama), your data remains on your machine. However, AI-generated root cause analyses and incident reports can still suffer from "hallucinations."
+
+Never automate destructive actions (like firewall bans, IP blocking, or system shutdowns) based solely on AI output without human verification.
+
+No Warranty or Liability: This software is provided "as is," without warranty of any kind, express or implied. The author(s) and contributor(s) are not responsible for any direct or indirect damage, data loss, system downtime, or legal repercussions resulting from the use or misuse of this tool.
