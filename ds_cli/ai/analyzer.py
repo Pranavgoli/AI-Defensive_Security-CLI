@@ -58,8 +58,15 @@ class AIAnalyzer:
         response_text = self._call_llm(prompt)
         
         try:
-            # Cleanup common markdown codeblock artifacts that models sometimes insert
-            cleaned = response_text.replace("```json", "").replace("```", "").strip()
+            import re
+            # Extract JSON block even if the small model includes conversational text (e.g., "Here is the JSON...")
+            match = re.search(r'\{.*\}', response_text, re.DOTALL)
+            if match:
+                cleaned = match.group(0)
+            else:
+                # Fallback to simple replace
+                cleaned = response_text.replace("```json", "").replace("```", "").strip()
+                
             result = json.loads(cleaned)
             # Upgrade or downgrade severity based on AI
             alert.severity = result.get("severity_classification", alert.severity).upper()
