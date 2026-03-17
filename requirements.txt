@@ -1,0 +1,6 @@
+click
+rich
+pydantic
+openai
+pytest
+python-dateutil

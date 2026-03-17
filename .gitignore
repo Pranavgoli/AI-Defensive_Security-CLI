@@ -1,0 +1,34 @@
+# Application Specific Data
+*logs.txt
+sample_logs.*
+test_logs.*
+*.log
+ds_reports/
+*.md.bak
+HOW_TO_RUN_WINDOWS.txt
+
+# Environment/Configuration Files
+.env
+.env.*
+*.local
+.DS_Store
+Thumbs.db
+
+# Virtual Environments & Build Artifacts
+venv/
+env/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo

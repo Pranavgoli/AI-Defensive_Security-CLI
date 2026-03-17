@@ -1,0 +1,67 @@
+# AI Defensive Security CLI (DS-CLI) - Windows Setup
+#
+# ==========================================
+# FULL WINDOWS INSTALLATION & EXECUTION GUIDE
+# ==========================================
+#
+# STEP 1: PREREQUISITES
+# ---------------------
+# 1. Download and install Python (3.8 or higher) from https://www.python.org/downloads/
+#    *CRITICAL*: During installation, you MUST check the box that says "Add Python to PATH" before hitting Install.
+# 2. Download and install Git from https://git-scm.com/download/win
+# 3. Download and install Ollama from https://ollama.com/download (Choose Windows)
+#
+# STEP 2: CLONE THE REPOSITORY
+# ----------------------------
+# 1. Open a regular Windows Command Prompt (cmd) or PowerShell.
+# 2. Navigate to where you want the project:
+#      cd Desktop
+# 3. Clone the code:
+#      git clone https://github.com/yourusername/ds-cli.git
+# 4. Enter the folder:
+#      cd ds-cli
+#
+# STEP 3: VIRTUAL ENVIRONMENT & DEPENDENCIES
+# ------------------------------------------
+# 1. Create an isolated Python environment so it doesn't mess with other projects:
+#      python -m venv venv
+# 2. Activate the environment:
+#      .\venv\Scripts\activate
+#    (You should now see `(venv)` at the start of your command prompt line)
+# 3. Install this file's dependencies:
+#      python -m pip install -r requirements_windows.txt
+#    OR install the CLI globally:
+#      python -m pip install -e .
+#
+# STEP 4: START UP THE AI ENGINE
+# ------------------------------
+# 1. Open the Ollama app you installed in Step 1 (you should see the little llama icon in your system tray).
+# 2. In your Command Prompt, download the specific security model we use:
+#      ollama pull qwen2.5-coder:1.5b
+# 3. (Optional) You can verify Ollama is running by going to http://localhost:11434 in your browser.
+#
+# STEP 5: RUN THE PROJECT!
+# ------------------------
+# You are now completely set up. You can run the CLI directly from your terminal.
+#
+# View the ASCII banner and verify configuration:
+#      python -m ds_cli info
+#
+# Run the rule-based threat detection on a log file (Does not use AI):
+#      python -m ds_cli analyze \path\to\your\logs.txt
+#
+# Run the FULL pipeline (Detection + AI Root Cause Analysis + markdown Incident Reports):
+#      python -m ds_cli report \path\to\your\logs.txt
+#
+# (Reports will automatically save to a folder named `ds_reports` in your directory)
+#
+# ==========================================
+# DEPENDENCIES BELOW (Do not modify)
+# ==========================================
+
+click
+rich
+pydantic
+openai
+pytest
+python-dateutil

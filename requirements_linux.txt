@@ -1,0 +1,66 @@
+# AI Defensive Security CLI (DS-CLI) - Linux Setup
+#
+# ========================================
+# FULL LINUX INSTALLATION & EXECUTION GUIDE
+# ========================================
+#
+# STEP 1: PREREQUISITES
+# ---------------------
+# 1. Open your Terminal.
+# 2. Install Python, pip, and venv (Ubuntu/Debian example):
+#      sudo apt update
+#      sudo apt install python3 python3-pip python3-venv git -y
+# 3. Install Ollama (the local AI engine runtime):
+#      curl -fsSL https://ollama.com/install.sh | sh
+#
+# STEP 2: CLONE THE REPOSITORY
+# ----------------------------
+# 1. Clone the project code:
+#      git clone https://github.com/yourusername/ds-cli.git
+# 2. Enter the folder:
+#      cd ds-cli
+#
+# STEP 3: VIRTUAL ENVIRONMENT & DEPENDENCIES
+# ------------------------------------------
+# 1. Create an isolated Python environment:
+#      python3 -m venv venv
+# 2. Activate the environment:
+#      source venv/bin/activate
+#    (You should now see `(venv)` at the start of your terminal line)
+# 3. Install this file's dependencies:
+#      pip3 install -r requirements_linux.txt
+#    OR install the CLI globally:
+#      pip3 install -e .
+#
+# STEP 4: START UP THE AI ENGINE
+# ------------------------------
+# 1. Ensure the Ollama service is running in the background:
+#      sudo systemctl start ollama
+# 2. Download the specific security model we use:
+#      ollama pull qwen2.5-coder:1.5b
+#
+# STEP 5: RUN THE PROJECT!
+# ------------------------
+# You are now completely set up. You can run the CLI directly from your terminal.
+#
+# View the ASCII banner and verify configuration:
+#      python3 -m ds_cli info
+#
+# Run the rule-based threat detection on a log file (Does not use AI):
+#      python3 -m ds_cli analyze /path/to/your/logs.txt
+#
+# Run the FULL pipeline (Detection + AI Root Cause Analysis + markdown Incident Reports):
+#      python3 -m ds_cli report /path/to/your/logs.txt
+#
+# (Reports will automatically save to a folder named `ds_reports` in your directory)
+#
+# ========================================
+# DEPENDENCIES BELOW (Do not modify)
+# ========================================
+
+click
+rich
+pydantic
+openai
+pytest
+python-dateutil

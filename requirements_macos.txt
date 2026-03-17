@@ -1,0 +1,65 @@
+# AI Defensive Security CLI (DS-CLI) - macOS Setup
+#
+# ========================================
+# FULL MACOS INSTALLATION & EXECUTION GUIDE
+# ========================================
+#
+# STEP 1: PREREQUISITES
+# ---------------------
+# 1. Open the Terminal application (Cmd+Space -> type Terminal).
+# 2. Install Homebrew (if you don't have it):
+#      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# 3. Install Python and Git via Homebrew:
+#      brew install python git
+# 4. Download and install Ollama from https://ollama.com/download (Choose macOS)
+#
+# STEP 2: CLONE THE REPOSITORY
+# ----------------------------
+# 1. Clone the project code:
+#      git clone https://github.com/yourusername/ds-cli.git
+# 2. Enter the folder:
+#      cd ds-cli
+#
+# STEP 3: VIRTUAL ENVIRONMENT & DEPENDENCIES
+# ------------------------------------------
+# 1. Create an isolated Python environment:
+#      python3 -m venv venv
+# 2. Activate the environment:
+#      source venv/bin/activate
+#    (You should now see `(venv)` at the start of your terminal line)
+# 3. Install this file's dependencies:
+#      pip3 install -r requirements_macos.txt
+#    OR install the CLI globally:
+#      pip3 install -e .
+#
+# STEP 4: START UP THE AI ENGINE
+# ------------------------------
+# 1. Open the Ollama app from your Applications folder (you should see the llama icon in your top menu bar).
+# 2. In your Terminal, download the specific security model we use:
+#      ollama pull qwen2.5-coder:1.5b
+#
+# STEP 5: RUN THE PROJECT!
+# ------------------------
+# You are now completely set up. You can run the CLI directly from your terminal.
+#
+# View the ASCII banner and verify configuration:
+#      python3 -m ds_cli info
+#
+# Run the rule-based threat detection on a log file (Does not use AI):
+#      python3 -m ds_cli analyze /path/to/your/logs.txt
+#
+# Run the FULL pipeline (Detection + AI Root Cause Analysis + markdown Incident Reports):
+#      python3 -m ds_cli report /path/to/your/logs.txt
+#
+# (Reports will automatically save to a folder named `ds_reports` in your directory)
+#
+# ========================================
+# DEPENDENCIES BELOW (Do not modify)
+# ========================================
+
+click
+rich
+pydantic
+openai
+pytest
+python-dateutil
