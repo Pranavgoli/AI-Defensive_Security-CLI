@@ -96,6 +96,8 @@ You can configure the application using environment variables:
 
 ## Usage
 
+The CLI acts as a standalone tool that you can pass your own files into. You can analyze raw application logs, enterprise server logs, or custom dummy files you created for testing.
+
 View the help and banner:
 ```bash
 ds_cli info
@@ -103,12 +105,12 @@ ds_cli info
 
 Analyze logs for threats (Rule-Based only):
 ```bash
-ds_cli analyze /path/to/logs.txt
+ds_cli analyze <path_to_your_custom_logs.txt>
 ```
 
 Run the full pipeline (Detection + AI Root Cause Analysis + Incident Reporting):
 ```bash
-ds_cli report /path/to/logs.txt
+ds_cli report <path_to_your_custom_logs.txt>
 ```
 
 ### Running with Ollama locally
