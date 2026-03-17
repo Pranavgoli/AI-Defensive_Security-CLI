@@ -152,6 +152,9 @@ Because this project is hardened against parsing attacks (OOM DoS, ReDoS, etc.),
 
 Even if a log line is severely obfuscated or malformed (non-JSON, missing braces, invalid UTF-8 bytes like `\xff\xfe\xfd`), the CLI guarantees it will read, normalize, and process whatever events it can salvage without terminating the application or succumbing to an injection attack.
 
+## Recommendation 
+If you ever want move from a local endpoint (like Ollama) to a cloud provider (OpenAI/Anthropic), continue to set your AI_API_KEY in your terminal environment or a local .env file that stays on your machine, rather than modifying the config.py file.
+
 ## Contributing
 Pull requests are welcome! Ensure you handle edge cases carefully, as security logs can contain highly malformed, adversarial data.
 
